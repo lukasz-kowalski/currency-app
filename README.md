@@ -1,3 +1,7 @@
+## Currency app
+
+Currency App - follow the current exchange rate of your favorite currency. Utilizes the NBP API.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
