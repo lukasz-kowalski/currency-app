@@ -1,0 +1,22 @@
+$xs-size: 0.6rem;
+$s-size: 1.2rem;
+$m-size: 1.6rem;
+$l-size: 3.2rem;
+$xl-size: 4.8rem;
+
+$m-breakpoint: 620px;
+$max-width: 118rem;
+
+$green: #4fb477;
+$red: #e94747;
+$darker-grey: #aaa;
+$light-grey: #ccc;
+$white: #fff;
+$light-black: #333;
+$black: #000;
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

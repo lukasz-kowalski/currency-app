@@ -39,7 +39,6 @@ export const fetchCurrencyData = (): ThunkResult<void> => {
       );
 
       const currencies = response.data[0].rates;
-      console.log(currencies);
 
       dispatch(addCurrencies(currencies));
     } catch (err) {

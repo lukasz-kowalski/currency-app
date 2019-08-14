@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { ICurrency } from "../../types/interfaces/currenciesInterface";
 import {
@@ -22,13 +23,15 @@ const DashboardFavList: React.FC = () => {
   if (favCurrencies.length < 1) {
     return (
       <div className="fav-list">
-        You don't have any favorite currency. Please add some
+        You don't have any favorite currency. Please go to{" "}
+        <Link to="/exchange">exchange page</Link> and add some.
       </div>
     );
   }
 
   return (
     <div className="fav-list">
+      <h2>Currencies followed by you</h2>
       {favCurrencies.map((currency: ICurrency) => (
         <ListItem
           key={currency.code}
@@ -38,10 +41,13 @@ const DashboardFavList: React.FC = () => {
           label="Remove from favorites"
           handleClick={removeCurrencyFromFav}
           data={currency.code}
+          btnClass="btn--red"
         />
       ))}
       <div>
-        <button onClick={removeAllCurrenciesFromFav}>Remove all</button>
+        <button onClick={removeAllCurrenciesFromFav} className="btn btn--red">
+          Remove all
+        </button>
       </div>
     </div>
   );

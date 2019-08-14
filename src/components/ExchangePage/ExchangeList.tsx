@@ -5,11 +5,11 @@ import { RootState } from "../../types/interfaces/reducersTypes";
 import { addCurrency } from "../../redux/actions/currenciesActions";
 import ListItem from "../ui/ListItem";
 
-const DashboardCurrencies: React.FC = () => {
-  const currencies: ICurrency[] = useSelector(
-    (state: RootState) => state.currencies.currencies
-  );
+interface IProps {
+  currencies: ICurrency[];
+}
 
+const DashboardCurrencies: React.FC<IProps> = ({ currencies }) => {
   const favCurrencies: ICurrency[] = useSelector(
     (state: RootState) => state.currencies.favCurrencies
   );
@@ -21,7 +21,8 @@ const DashboardCurrencies: React.FC = () => {
   };
 
   return (
-    <div className="dashboard__currencies">
+    <div className="exchange-list">
+      <h2>Current exchange rate</h2>
       {currencies.map(
         (currency: ICurrency): JSX.Element => {
           const active: boolean = favCurrencies.includes(currency);
@@ -36,6 +37,7 @@ const DashboardCurrencies: React.FC = () => {
               handleClick={addCurrencyToFav}
               data={currency}
               active={active}
+              btnClass="btn--green"
             />
           );
         }

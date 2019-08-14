@@ -1,5 +1,4 @@
 import React from "react";
-
 import { ICurrency } from "../../types/interfaces/currenciesInterface";
 
 interface IProps {
@@ -9,6 +8,7 @@ interface IProps {
   name: string;
   code: string;
   exchangeRate: number;
+  btnClass: string;
   active?: boolean;
 }
 
@@ -19,7 +19,8 @@ const ListItem: React.FC<IProps> = ({
   code,
   exchangeRate,
   data,
-  active
+  active,
+  btnClass
 }) => {
   const handleButtonClick = () => handleClick(data);
 
@@ -29,7 +30,11 @@ const ListItem: React.FC<IProps> = ({
       <div>
         {code} {exchangeRate}
       </div>
-      <button onClick={handleButtonClick} disabled={active}>
+      <button
+        onClick={handleButtonClick}
+        disabled={active}
+        className={`btn ${btnClass}`}
+      >
         {label}
       </button>
     </div>

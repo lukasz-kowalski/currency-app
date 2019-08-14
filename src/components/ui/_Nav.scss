@@ -1,0 +1,45 @@
+.nav {
+  padding: $xs-size;
+  background: #4fb477;
+
+  @media (min-width: $m-breakpoint) {
+    padding: $s-size;
+  }
+
+  &__container {
+    @include flex-center();
+    justify-content: space-between;
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+
+  &__link {
+    color: $black;
+    padding: $xs-size;
+    transition: all 0.5s ease;
+
+    &:hover {
+      color: $white;
+    }
+
+    @media (min-width: $m-breakpoint) {
+      margin-left: $s-size;
+      padding: $xs-size;
+    }
+  }
+
+  &__logo {
+    font-family: "Lobster", cursive;
+    font-size: $m-size;
+    text-align: center;
+    color: $white;
+
+    @media (min-width: $m-breakpoint) {
+      font-size: $l-size;
+    }
+  }
+}
+
+.active {
+  color: $white;
+}

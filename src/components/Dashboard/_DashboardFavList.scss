@@ -1,0 +1,9 @@
+.dashboard {
+  @include flex-center();
+  flex-direction: column;
+
+  h2 {
+    text-align: center;
+    margin-bottom: $m-size;
+  }
+}

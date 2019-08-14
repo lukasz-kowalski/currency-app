@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: $m-size;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: $green;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 118rem;
+  margin: 5rem auto 0 auto;
+  padding: 1rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  font-weight: bold;
+  border: none;
+  color: $white;
+  border-radius: 5px;
+
+  &--green {
+    background: $green;
+  }
+
+  &--red {
+    background: $red;
+  }
+
+  &:disabled {
+    background: #ccc;
+    color: $darker-grey;
+  }
+}

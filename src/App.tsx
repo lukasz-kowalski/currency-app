@@ -1,13 +1,8 @@
 import React from "react";
-import Dashboard from "./views/Dashboard";
-import "./App.css";
+import Routes from "./Routes";
 
 const App: React.FC = () => {
-  return (
-    <div className="app">
-      <Dashboard />
-    </div>
-  );
+  return <Routes />;
 };
 
 export default App;
