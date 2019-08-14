@@ -16,7 +16,9 @@ export const addCurrency = (currency: ICurrency): CurrenciesActionType => ({
   payload: currency
 });
 
-const addCurrencies = (currencies: ICurrency[]): CurrenciesActionType => ({
+export const addCurrencies = (
+  currencies: ICurrency[]
+): CurrenciesActionType => ({
   type: ADD_CURRENCIES,
   payload: currencies
 });

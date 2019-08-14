@@ -7,6 +7,8 @@ export const ADD_CURRENCIES = "ADD_CURRENCIES";
 export const REMOVE_CURRENCY = "REMOVE_CURRENCY";
 export const REMOVE_ALL_CURRENCIES = "REMOVE_ALL_CURRENCIES";
 
+export const INIT = "@@INIT";
+
 export const SET_LOADING = "SET_LOADING";
 
 interface AddCurrencyAction {
@@ -26,9 +28,16 @@ interface RemoveCurrencyAction {
 
 interface RemoveAllCurrencies {
   type: typeof REMOVE_ALL_CURRENCIES;
+  payload?: void;
+}
+
+interface Init {
+  type: typeof INIT;
+  payload?: void;
 }
 
 export type CurrenciesActionType =
+  | Init
   | AddCurrencyAction
   | AddCurrenciesAction
   | RemoveCurrencyAction
@@ -39,7 +48,7 @@ interface SetLoading {
   payload: boolean;
 }
 
-export type LoadingActionType = SetLoading;
+export type LoadingActionType = SetLoading | Init;
 
 export type ThunkResult<R> = ThunkAction<
   R,

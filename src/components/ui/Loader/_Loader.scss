@@ -1,0 +1,15 @@
+.loader {
+  position: absolute;
+  z-index: 100;
+  animation: rotate 0.6s infinite linear;
+  border: 10px solid #009a93;
+  border-right-color: transparent;
+  border-radius: 50%;
+  background: transparent;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
