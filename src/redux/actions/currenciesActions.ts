@@ -5,6 +5,7 @@ import {
   ADD_FAV_CURRENCY,
   ADD_CURRENCIES,
   REMOVE_CURRENCY,
+  REMOVE_ALL_CURRENCIES,
   ThunkResult,
   ThunkAsyncDispatch
 } from "../../types/interfaces/actionsInterface";
@@ -25,15 +26,26 @@ export const removeCurrency = (code: string): CurrenciesActionType => ({
   payload: code
 });
 
+export const removeAllCurrencies = (): CurrenciesActionType => ({
+  type: REMOVE_ALL_CURRENCIES
+});
+
 export const fetchCurrencyData = (): ThunkResult<void> => {
   return async (dispatch: ThunkAsyncDispatch) => {
     dispatch(setLoading(true));
+    try {
+      const response = await axios.get(
+        "http://api.nbp.pl/api/exchangerates/tables/a?format=json"
+      );
 
-    const data: ICurrency[] = await axios.get(
-      "http://api.nbp.pl/api/exchangerates/tables/c?format=json"
-    );
+      const currencies = response.data[0].rates;
+      console.log(currencies);
 
-    dispatch(addCurrencies(data));
+      dispatch(addCurrencies(currencies));
+    } catch (err) {
+      console.log(err);
+    }
+
     dispatch(setLoading(false));
   };
 };

@@ -3,7 +3,8 @@ import {
   CurrenciesActionType,
   ADD_FAV_CURRENCY,
   ADD_CURRENCIES,
-  REMOVE_CURRENCY
+  REMOVE_CURRENCY,
+  REMOVE_ALL_CURRENCIES
 } from "../../types/interfaces/actionsInterface";
 
 const defaultState: CurrencyState = {
@@ -30,6 +31,8 @@ const currencyReducer = (
           currency => currency.code !== action.payload
         )
       };
+    case REMOVE_ALL_CURRENCIES:
+      return { ...state, favCurrencies: [] };
     default:
       return state;
   }

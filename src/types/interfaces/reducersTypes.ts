@@ -8,3 +8,8 @@ export interface CurrencyState {
 export interface LoadingState {
   appLoading: boolean;
 }
+
+export interface RootState {
+  currencies: CurrencyState;
+  loaders: LoadingState;
+}

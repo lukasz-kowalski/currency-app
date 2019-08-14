@@ -5,6 +5,7 @@ import { CurrencyState } from "./reducersTypes";
 export const ADD_FAV_CURRENCY = "ADD_FAV_CURRENCY";
 export const ADD_CURRENCIES = "ADD_CURRENCIES";
 export const REMOVE_CURRENCY = "REMOVE_CURRENCY";
+export const REMOVE_ALL_CURRENCIES = "REMOVE_ALL_CURRENCIES";
 
 export const SET_LOADING = "SET_LOADING";
 
@@ -23,10 +24,15 @@ interface RemoveCurrencyAction {
   payload: string;
 }
 
+interface RemoveAllCurrencies {
+  type: typeof REMOVE_ALL_CURRENCIES;
+}
+
 export type CurrenciesActionType =
   | AddCurrencyAction
   | AddCurrenciesAction
-  | RemoveCurrencyAction;
+  | RemoveCurrencyAction
+  | RemoveAllCurrencies;
 
 interface SetLoading {
   type: typeof SET_LOADING;
